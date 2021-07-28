@@ -19,6 +19,7 @@ public class TargetManager : Singleton<TargetManager>
     public GameObject player;
 
     public float spawnDelay = 2;
+    public GameObject moveToPos;
 
 
     void Start()
@@ -38,7 +39,7 @@ public class TargetManager : Singleton<TargetManager>
         int rndTarget = Random.Range(0, targetTypes.Length);
         int rndSpawn = Random.Range(0, spawnPoints.Length);
         GameObject go = Instantiate(targetTypes[rndTarget], spawnPoints[rndSpawn]);
-        go.GetComponent<Target>().moveToPos = player.transform;
+        
         targets.Add(go);
         yield return new WaitForSeconds(spawnDelay);
         StartCoroutine(SpawnWithDelay());
@@ -48,15 +49,18 @@ public class TargetManager : Singleton<TargetManager>
 
     void SpawnTarget()
     {
+
+        int rndTarget = Random.Range(0, targetTypes.Length);
+        for (int i = 0; i <spawnPoints.Length; i++)
         {
-            int rndTarget = Random.Range(0, targetTypes[0], spawnPoints[i]);
+            GameObject go = Instantiate(targetTypes[0], spawnPoints[i]);
             targets.Add(go);
         }
 
-        for (int i = 0; < targets.Count; i++)
+        for (int i = 0; i <targets.Count; i ++)
         {
-            if (targets[i].name.Contains("B"))
-                Destroy(targets[i]);
+            Debug.Log(targets[i].name);
+            Destroy(targets[i]);
         }
 
     }
@@ -94,23 +98,14 @@ public class TargetManager : Singleton<TargetManager>
         Debug.Log("Random number is:" + rnd);
     }
 
-    private void OnEnable()
-    {
-        GameEvents.OnTargetDied += TargetDied;
-    }
-
-    private void OnDisable()
-    {
-        GameEvents.OnTargetDied += TargetDied;
-    }
-
+  
     void TargetDied(Target _target)
     {
         targets.Remove(_target.gameObject);
         Destroy(_target.gameObject);
     }
 
-
+    
 
 
 }

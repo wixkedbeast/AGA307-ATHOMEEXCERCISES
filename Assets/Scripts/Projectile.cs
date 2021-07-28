@@ -5,15 +5,15 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
 
-
+   
     // Update is called once per frame
-    void OncollisionEnter(Collision collision)
+    private void OncollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Target"))
+        if (collision.collider.CompareTag("Target"))
         {
-            collision.gameObject.GetComponent<Renderer>().material.color = Color.red;
-            Destroy(collision.gameObject, 1);
-            Destroy(gameObject);
+            collision.collider.GetComponent<Renderer>().material.color = Color.red;
+            Destroy(collision.collider.gameObject, 1f);
+            Destroy(this.gameObject);
         }
     }
 
