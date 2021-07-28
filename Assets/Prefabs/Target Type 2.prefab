@@ -109,5 +109,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27ff4394be354e189687383a2638e9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetType:
-  - {fileID: 3102912847625438275}
+  moveToPos: {fileID: 0}
+  targetType: 1

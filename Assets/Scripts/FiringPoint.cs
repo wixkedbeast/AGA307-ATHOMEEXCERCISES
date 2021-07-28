@@ -8,6 +8,7 @@ public class FiringPoint : MonoBehaviour
     public float projectileSpeed = 1000f;
     
     
+    
 
     // Update is called once per frame
     void Update()

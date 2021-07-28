@@ -18,14 +18,14 @@ public enum Difficulty
 
 public class GameManager : Singleton<GameManager>
 {
-    public static GameManager instance;
+    
     public Gamestate gameState;
     public Difficulty difficulty;
 
     public int score;
     int scoreMultiplier = 1;
 
-    float timer = 30;
+    
 
 
     // Start is called before the first frame update
@@ -48,12 +48,17 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+   
+
     // Update is called once per frame
-    void Update()
+    
+
+    public void AddScore(int _points)
     {
-        timer -= Time.deltaTime;
-        timer = Mathf.Clamp(timer, 0, 100);
-        
+        score += _points * scoreMultiplier;
+        _UI.UpdateScore(score);
+
+
     }
 
     public void ChangeDifficulty(int _difficulty)
@@ -61,7 +66,8 @@ public class GameManager : Singleton<GameManager>
         difficulty = (Difficulty)_difficulty;
     }
 
-    
-
-    
+    void OnTargetHit(Target _target)
+    {
+        AddScore(10);
+    }
 }

@@ -12,9 +12,20 @@ public class Projectile : MonoBehaviour
         if (collision.collider.CompareTag("Target"))
         {
             collision.collider.GetComponent<Renderer>().material.color = Color.red;
-            Destroy(collision.collider.gameObject, 1f);
-            Destroy(this.gameObject);
+            Destroy(collision.gameObject, 1);
+            
+            collision.gameObject.GetComponent<Target>().Hit();
+            Destroy(gameObject, 0.2f);
         }
+
+        if(collision.gameObject.CompareTag("Target"))
+        {
+            collision.gameObject.GetComponent<Target>().Hit();
+            Destroy(gameObject);
+        }
+
+        
     }
+
 
 }
