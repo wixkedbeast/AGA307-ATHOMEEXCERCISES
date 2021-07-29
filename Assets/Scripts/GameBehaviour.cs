@@ -11,6 +11,8 @@ public class GameBehaviour : MonoBehaviour
 
     protected static UIManager _UI { get { return UIManager.instance; } }
 
+    protected static PlayerMovement _Player { get { return PlayerMovement.instance; } }
+
 
 
     public bool isEven(int _value)

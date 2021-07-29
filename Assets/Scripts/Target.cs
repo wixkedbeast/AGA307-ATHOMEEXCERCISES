@@ -10,6 +10,7 @@ public class Target : GameBehaviour
     float myHealth;
     public Transform moveToPos;
     Vector3 startPos;
+    
 
     public TargetType targetType;
 
@@ -29,13 +30,14 @@ public class Target : GameBehaviour
     public void Hit()
     {
         health -= 10;
+        
 
         if (health <= 0)
         {
             Destroy(gameObject, 2);
         }
 
-
+        
 
 
     }

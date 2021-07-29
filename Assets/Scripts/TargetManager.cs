@@ -98,8 +98,18 @@ public class TargetManager : Singleton<TargetManager>
         Debug.Log("Random number is:" + rnd);
     }
 
-  
-    void TargetDied(Target _target)
+    private void OnEnable()
+    {
+        GameEvents.OnTargetDied += TargetDied;
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.OnTargetDied += TargetDied;
+    }
+
+
+    public void TargetDied(Target _target)
     {
         targets.Remove(_target.gameObject);
         Destroy(_target.gameObject);
