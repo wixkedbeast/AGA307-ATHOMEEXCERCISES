@@ -27,6 +27,7 @@ public class GameManager : Singleton<GameManager>
 
     public float timer = 30;
     public float maxTime = 30;
+    
 
 
 
@@ -47,6 +48,7 @@ public class GameManager : Singleton<GameManager>
             default:
                 scoreMultiplier = 1;
                 break;
+
         }
     }
 
@@ -68,8 +70,7 @@ public class GameManager : Singleton<GameManager>
 
 
 
-    // Update is called once per frame
-
+    
 
     public void AddScore(int _points)
     {
@@ -84,11 +85,14 @@ public class GameManager : Singleton<GameManager>
     public void ChangeDifficulty(int _difficulty)
     {
         difficulty = (Difficulty)_difficulty;
+        //_UI.UpdateDifficulty(_difficulty);
+
     }
 
     public void ChangeGameState(Gamestate _gameState)
     {
         gameState = _gameState;
+        
     }
 
     private void OnEnable()
@@ -96,13 +100,15 @@ public class GameManager : Singleton<GameManager>
         GameEvents.OnTargetHit += OnTargetHit;
         GameEvents.OnTargetDied += OnTargetDied;
         
-        
+
     }
 
     private void OnDisable()
     {
-        GameEvents.OnTargetHit += OnTargetHit;
-        GameEvents.OnTargetDied += OnTargetDied;
+        GameEvents.OnTargetHit -= OnTargetHit;
+        GameEvents.OnTargetDied -= OnTargetDied;
+       
+
     }
 
     
@@ -112,7 +118,9 @@ public class GameManager : Singleton<GameManager>
     {
       
         AddScore(10);
+        _UI.UpdateTimer(timer += 5);
         
+
     }
 
     void OnTargetDied(Target _target)
@@ -120,11 +128,17 @@ public class GameManager : Singleton<GameManager>
        
         AddScore(100);
         
+
     }
 
     
 
-    
+   
+
+
+
+
+
 
 
 }

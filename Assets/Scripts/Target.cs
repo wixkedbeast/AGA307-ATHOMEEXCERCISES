@@ -29,15 +29,18 @@ public class Target : GameBehaviour
 
     public void Hit()
     {
+
+       
         health -= 10;
-        
+        GameEvents.ReportTargetHit(this);
 
         if (health <= 0)
         {
             Destroy(gameObject, 2);
+            GameEvents.ReportTargetDied(this);
         }
 
-        
+
 
 
     }
@@ -80,6 +83,7 @@ public class Target : GameBehaviour
 
         }
     }
+
     
 
    

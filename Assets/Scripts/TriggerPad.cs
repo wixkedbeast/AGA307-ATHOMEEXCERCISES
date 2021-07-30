@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TriggerPad : MonoBehaviour
 {
-    public GameObject sphere;   //The object we wish to change
+    public GameObject sphere;   
 
     void OnTriggerEnter(Collider other)
     {

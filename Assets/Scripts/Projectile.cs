@@ -6,7 +6,6 @@ public class Projectile : MonoBehaviour
 {
 
     
-    // Update is called once per frame
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Target"))
@@ -16,17 +15,13 @@ public class Projectile : MonoBehaviour
             
             collision.gameObject.GetComponent<Target>().Hit();
 
-           
+
             Destroy(this.gameObject);
+            
 
         }
 
-        //if(collision.gameObject.CompareTag("Target"))
-        //{
-            //collision.gameObject.GetComponent<Target>().Hit();
-            //Destroy(gameObject);
-        //}
-
+        
         
     }
 

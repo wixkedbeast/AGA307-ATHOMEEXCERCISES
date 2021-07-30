@@ -4928,7 +4928,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &514162331
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5388,6 +5388,7 @@ MonoBehaviour:
   player: {fileID: 1117588147}
   spawnDelay: 2
   moveToPos: {fileID: 0}
+  timer: 0
 --- !u!4 &592605756
 Transform:
   m_ObjectHideFlags: 0
@@ -5521,6 +5522,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroy: 0
   scoreText: {fileID: 496310142}
+  Difficulty: {fileID: 1363304223}
+  targetsLeft: {fileID: 514162332}
   timerText: {fileID: 461535034}
   timerSlider: {fileID: 2035005163}
 --- !u!1 &667728435
@@ -7677,7 +7680,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15836
+  m_Name: pb_Mesh15988
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8173,7 +8176,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1363304222
 RectTransform:
   m_ObjectHideFlags: 0

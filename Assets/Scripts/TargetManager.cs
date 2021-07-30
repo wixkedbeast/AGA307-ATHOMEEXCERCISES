@@ -20,19 +20,29 @@ public class TargetManager : Singleton<TargetManager>
 
     public float spawnDelay = 2;
     public GameObject moveToPos;
-
+    public float timer;
 
     void Start()
     {
+        
+
+        
+
         StartCoroutine(SpawnWithDelay());
 
         for (int i = 0; i < 50; i++)
         {
             Debug.Log("Current number :" + i);
+           
         }
 
-
+        
     }
+    
+
+    
+
+    
 
     IEnumerator SpawnWithDelay()
     {
@@ -61,7 +71,10 @@ public class TargetManager : Singleton<TargetManager>
         {
             Debug.Log(targets[i].name);
             Destroy(targets[i]);
+            
         }
+
+      
 
     }
 
@@ -113,9 +126,13 @@ public class TargetManager : Singleton<TargetManager>
     {
         targets.Remove(_target.gameObject);
         Destroy(_target.gameObject);
+        
+
     }
 
-    
+
+
+
 
 
 }

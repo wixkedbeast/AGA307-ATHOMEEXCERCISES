@@ -8,8 +8,8 @@ public class UIManager : Singleton<UIManager>
 {
 
     public TMP_Text scoreText;
-    //public TMP_Text Difficulty;
-    //public TMP_Text TargetsLeft;
+    public TMP_Text Difficulty;
+    public TMP_Text targetsLeft;
     public TMP_Text timerText; 
     public Slider timerSlider;
 
@@ -24,20 +24,21 @@ public class UIManager : Singleton<UIManager>
         timerSlider.value = _timer;
 
         timerText.color = _timer < 10f ? Color.red : Color.white;
+      
+    }
 
+    public void UpdateTargetsleft(int _targetsleft)
+    {
+        targetsLeft.text = "Targets Left:" + _targetsleft;
+    }
+
+    public void UpdateDifficulty(int _difficulty)
+    {
+        Difficulty.text = "Difficulty:" + _difficulty;
     }
 
 
 
-    //public void UpdateDifficulty(int _difficulty)
-    //{
-    //Difficulty.text = "Difficulty:" + _difficulty;
-    //}
-
-    //public void UpdateTargetsLeft(int _targetsleft)
-    //{
-    //TargetsLeft.text = "TargetsLeft:" + _targetsleft;
-    //}
 
 
 
