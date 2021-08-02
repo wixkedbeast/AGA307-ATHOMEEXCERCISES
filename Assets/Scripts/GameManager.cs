@@ -82,10 +82,10 @@ public class GameManager : Singleton<GameManager>
 
     }
 
-    public void ChangeDifficulty(int _difficulty)
+    public void ChangeDifficulty(Difficulty _difficulty)
     {
         difficulty = (Difficulty)_difficulty;
-        //_UI.UpdateDifficulty(_difficulty);
+        _UI.UpdateDifficulty(_difficulty);
 
     }
 

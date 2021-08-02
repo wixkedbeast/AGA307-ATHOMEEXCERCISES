@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: d290e1d410ca34e2c81a3048a3ee1c45, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -5522,7 +5522,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroy: 0
   scoreText: {fileID: 496310142}
-  Difficulty: {fileID: 1363304223}
+  difficulty: 0
+  difficultyText: {fileID: 1363304223}
   targetsLeft: {fileID: 514162332}
   timerText: {fileID: 461535034}
   timerSlider: {fileID: 2035005163}
@@ -8171,7 +8172,7 @@ GameObject:
   - component: {fileID: 1363304224}
   - component: {fileID: 1363304223}
   m_Layer: 5
-  m_Name: Difficulty
+  m_Name: DifficultyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

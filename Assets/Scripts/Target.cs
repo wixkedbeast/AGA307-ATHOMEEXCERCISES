@@ -23,6 +23,7 @@ public class Target : GameBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(Move());
+            
         }
         
     }
@@ -43,7 +44,10 @@ public class Target : GameBehaviour
 
 
 
+
     }
+
+
 
     IEnumerator Move()
     {
@@ -83,6 +87,8 @@ public class Target : GameBehaviour
 
         }
     }
+
+    
 
     
 

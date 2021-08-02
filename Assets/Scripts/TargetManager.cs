@@ -14,13 +14,14 @@ public class TargetManager : Singleton<TargetManager>
 
     public Transform[] spawnPoints;
     public GameObject[] targetTypes;
-
+    
     public List<GameObject> targets;
     public GameObject player;
 
     public float spawnDelay = 2;
     public GameObject moveToPos;
     public float timer;
+   
 
     void Start()
     {
@@ -51,6 +52,7 @@ public class TargetManager : Singleton<TargetManager>
         GameObject go = Instantiate(targetTypes[rndTarget], spawnPoints[rndSpawn]);
         
         targets.Add(go);
+        _UI.UpdateTargetsleft(targets.Count);
         yield return new WaitForSeconds(spawnDelay);
         StartCoroutine(SpawnWithDelay());
 
@@ -126,9 +128,11 @@ public class TargetManager : Singleton<TargetManager>
     {
         targets.Remove(_target.gameObject);
         Destroy(_target.gameObject);
-        
-
+        print(targets.Count);
+        _UI.UpdateTargetsleft(targets.Count);
     }
+
+   
 
 
 

@@ -8,7 +8,8 @@ public class UIManager : Singleton<UIManager>
 {
 
     public TMP_Text scoreText;
-    public TMP_Text Difficulty;
+    public Difficulty difficulty;
+    public TMP_Text difficultyText;
     public TMP_Text targetsLeft;
     public TMP_Text timerText; 
     public Slider timerSlider;
@@ -32,9 +33,16 @@ public class UIManager : Singleton<UIManager>
         targetsLeft.text = "Targets Left:" + _targetsleft;
     }
 
-    public void UpdateDifficulty(int _difficulty)
+    public void UpdateDifficulty(Difficulty _difficulty)
     {
-        Difficulty.text = "Difficulty:" + _difficulty;
+        difficulty = _difficulty;
+        difficultyText.text = difficulty.ToString();
+    }
+
+    private void Start()
+    {
+        difficulty = _GM.difficulty;
+        UpdateDifficulty(difficulty);
     }
 
 
