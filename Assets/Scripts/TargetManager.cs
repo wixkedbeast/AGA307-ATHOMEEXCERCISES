@@ -39,11 +39,12 @@ public class TargetManager : Singleton<TargetManager>
 
         
     }
-    
 
-    
 
-    
+
+
+
+
 
     IEnumerator SpawnWithDelay()
     {
@@ -76,6 +77,8 @@ public class TargetManager : Singleton<TargetManager>
             
         }
 
+        
+
       
 
     }
@@ -105,6 +108,9 @@ public class TargetManager : Singleton<TargetManager>
 
         if (Input.GetKeyDown(KeyCode.R))
             GenerateRandomNumber();
+
+        if (Input.GetKey(KeyCode.I))
+            SpawnRandom();
     }
 
     void GenerateRandomNumber()
